@@ -16,7 +16,10 @@ This script safely isolates the main emulation engine while strictly targeting t
 4. **Zero-Impact Termination:** The millisecond `GameDownload`, `GameLoopSetup`, or `Setup` launch under GameLoop's context, the script kills them instantly. This prevents incoming updates from writing to disk while leaving the active emulator interface completely untouched.
 
 ### Setup & Usage
-1. Open the script file and ensure the installation path matches your correct drive configuration (e.g., `C:\`, `D:\`, or `G:\`).
-2. Right-click `gameloop.ps1` and select **Run with PowerShell**.
-3. Accept the UAC prompt. Keep the script window open or minimized while playing your game.
-4. Close the console window when your gaming session is complete to stop the background loop.
+1. Install Gameloop again and make sure after installation not to open the app.
+2. Open the script file and ensure the installation path matches your correct drive configuration (e.g., `C:\`, `D:\`, or `G:\`).
+3. Right-click `gameloop.ps1` and select **Run with PowerShell**.
+4.If the script doesn't execute, make sure you set the bypass execution policy for scripts via this command: "Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass" or using the script "powershell.exe -ExecutionPolicy Bypass -File .\gameloop.ps1"
+5. Make sure when Gameloop opens to go to settings and set the auto run at startup as unchecked.
+6. Accept the UAC prompt. Keep the script window open or minimized while playing your game.
+7. Close the console window when your gaming session is complete to stop the background loop.
