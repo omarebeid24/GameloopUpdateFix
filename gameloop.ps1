@@ -1,13 +1,11 @@
-# --- Auto Admin Elevation Script ---
+
 if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
     Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$PSCommandPath`"" -Verb RunAs
     Exit
 }
-# -----------------------------------
-# 1. Start GameLoop normally (AppMarket remains safe)
-Start-Process "G:\Program Files\TxGameAssistant\AppMarket\AppMarket.exe"
 
-# 2. Define the exact update and setup processes caught in your log report
+Start-Process "C:\Program Files\TxGameAssistant\AppMarket\AppMarket.exe" #Or insert your Gameloop installed path.
+
 $Targets = @("GameDownload", "GameLoopSetup", "Setup")
 
 Write-Host "GameLoop master window allowed. Monitoring strictly for background installers..." -ForegroundColor Cyan
